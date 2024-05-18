@@ -1,14 +1,9 @@
-import { Button } from '@mui/material';
-import DeleteIcon from '@mui/icons-material/Delete';
+import HomePage from './pages/homePage';
 
 export default function App() {
 	return (
-		<>
-			<div className="flex justify-center items-center h-screen w-screen">
-				<Button variant="contained" color="success" size="large" startIcon={<DeleteIcon />}>
-					garden Guru
-				</Button>
-			</div>
-		</>
+		<div className="flex justify-center items-center h-full w-full">
+			<HomePage />
+		</div>
 	);
 }
