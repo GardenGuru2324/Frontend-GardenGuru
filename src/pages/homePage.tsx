@@ -7,7 +7,7 @@ export default function HomePage() {
 
 	useEffect(() => {
 		const fetchPlants = async () => {
-			const data = await fetch('https://backend-api-garden-guru.vercel.app/api/v1/plants');
+			const data = await fetch('https://backend-api-garden-guru.vercel.app/api/v1/plants'); // change to service
 			const plants = await data.json();
 			setPlants(plants);
 		};
@@ -15,7 +15,7 @@ export default function HomePage() {
 	}, []);
 
 	return (
-		<div>
+		<div className="flex justify-center items-center flex-wrap">
 			{plants.map((plant) => (
 				<PlantCard plant={plant} />
 			))}
