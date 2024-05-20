@@ -14,6 +14,7 @@ export function BottomNavigationBar() {
 				value={value}
 				onChange={(event, newValue) => {
 					setValue(newValue);
+					console.log(event);
 				}}
 			>
 				<BottomNavigationAction label="Home" icon={<Home />} />
