@@ -31,7 +31,6 @@ export default function HomePage() {
 			{plants.map((plant) => (
 				<PlantCard plant={plant} />
 			))}
-			<p>test</p>
 		</div>
 	);
 }
