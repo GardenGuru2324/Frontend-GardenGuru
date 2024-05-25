@@ -1,4 +1,4 @@
-import { Plant } from '../../models/plant';
+import { Plant } from '../../models/plant/plant';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
