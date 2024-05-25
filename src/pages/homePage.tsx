@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Plant } from '../models/plant';
 import PlantCard from '../components/plant/plantCard';
-import CircularProgress from '@mui/material/CircularProgress';
+import Loading from '../components/ui/loading';
 
 export default function HomePage() {
 	const [plants, setPlants] = useState<Plant[]>([]);
@@ -21,7 +21,7 @@ export default function HomePage() {
 	if (isLoading) {
 		return (
 			<div className="flex justify-center items-center h-screen w-full">
-				<CircularProgress color="success" />
+				<Loading />
 			</div>
 		);
 	}
