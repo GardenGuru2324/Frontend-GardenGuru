@@ -1,22 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Plant } from '../models/plant';
 import PlantCard from '../components/plant/plantCard';
 import Loading from '../components/ui/loading';
+import usePlants from '../hooks/usePlants';
 
 export default function HomePage() {
-	const [plants, setPlants] = useState<Plant[]>([]);
-	const [isLoading, setIsLoading] = useState<boolean>(false);
-
-	useEffect(() => {
-		const fetchPlants = async () => {
-			setIsLoading(true);
-			const data = await fetch('https://backend-api-garden-guru.vercel.app/api/v1/plants'); // change to service
-			const plants = await data.json();
-			setPlants(plants);
-			setIsLoading(false);
-		};
-		fetchPlants();
-	}, []);
+	const { plants, isError, isLoading } = usePlants();
 
 	if (isLoading) {
 		return (
@@ -26,10 +13,18 @@ export default function HomePage() {
 		);
 	}
 
+	if (isError) {
+		return (
+			<div className="flex justify-center items-center h-screen w-full">
+				<p>Error!</p>
+			</div>
+		);
+	}
+
 	return (
 		<div className="flex justify-center items-center flex-wrap">
-			{plants.map((plant) => (
-				<PlantCard plant={plant} />
+			{plants!.map((plant) => (
+				<PlantCard plant={plant} key={plant.plantId} />
 			))}
 			<p>test</p>
 		</div>
