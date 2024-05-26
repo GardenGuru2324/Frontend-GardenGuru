@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const baseUrl = process.env.BASE_URL;
+
 export const getPlants = async () => {
-	const response = await axios.get(`https://backend-api-garden-guru.vercel.app/api/v1/plants`);
+	const response = await axios.get(`${baseUrl}/plants`);
 
 	return response.data;
 };
