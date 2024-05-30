@@ -26,7 +26,6 @@ export default function HomePage() {
 			{plants!.map((plant) => (
 				<PlantCard plant={plant} key={plant.plantId} />
 			))}
-			<p>test</p>
 		</div>
 	);
 }

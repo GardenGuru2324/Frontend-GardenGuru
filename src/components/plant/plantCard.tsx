@@ -15,9 +15,13 @@ export default function PlantCard({ plant }: PlantCardPorps) {
 			<CardActionArea>
 				<CardMedia
 					component="img"
-					height="140"
-					image="https://images.pexels.com/photos/2214370/pexels-photo-2214370.jpeg?cs=srgb&dl=green-plant-2214370.jpg&fm=jpg" // change
+					image={plant.plantImage}
 					alt={plant.plantName}
+					sx={{
+						height: 200,
+						width: 300,
+						objectFit: 'cover'
+					}}
 				/>
 				<CardContent>
 					<Typography gutterBottom variant="h5" component="div">
