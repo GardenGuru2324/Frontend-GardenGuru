@@ -1,7 +1,7 @@
-export default function HomePage() {
+export default function ProfilePage() {
 	return (
 		<div className="flex justify-center items-center flex-wrap">
-			<p>HomePage</p>
+			<p>ProfilePage</p>
 		</div>
 	);
 }
