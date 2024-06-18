@@ -7,6 +7,7 @@ import ProfilePage from "./pages/ProfilePage";
 import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 import Login from "./components/login/Login";
+import Register from "./components/register/Register";
 
 export default function App() {
   const { isAuthenticated } = useContext(AuthContext);
@@ -18,7 +19,12 @@ export default function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           {!isAuthenticated ? (
-            <Login />
+            <>
+              <Routes>
+                <Route path="/register" element={<Register />} />
+                <Route path="/" element={<Login />} />
+              </Routes>
+            </>
           ) : (
             <>
               <Routes>

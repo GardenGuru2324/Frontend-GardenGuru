@@ -1,15 +1,14 @@
 import { LoginResponse, LoginError, postLogin } from "../services/users/login";
 
-
 const useLogin = () => {
-	const loginUser = async (text: string, password: string): Promise<LoginResponse | LoginError> => {
-		const response = await postLogin(text, password);
-		return response;
-	};
+  const loginUser = async (email: string, password: string): Promise<LoginResponse | LoginError> => {
+    const response = await postLogin(email, password);
+    return response;
+  };
 
-	return {
-		loginUser
-	};
+  return {
+    loginUser,
+  };
 };
 
 export default useLogin;

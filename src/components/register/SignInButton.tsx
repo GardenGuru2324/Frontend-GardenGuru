@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const SignUpButton = () => {
+const SignInButton = () => {
   return (
-    <Link to="/register">
+    <Link to="/">
       <Button
         variant="contained"
         sx={{
@@ -15,10 +15,10 @@ const SignUpButton = () => {
           },
         }}
       >
-        Sign Up
+        Sign In
       </Button>
     </Link>
   );
 };
 
-export default SignUpButton;
+export default SignInButton;
