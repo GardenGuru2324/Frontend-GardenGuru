@@ -12,7 +12,7 @@ interface RegisterFormProps {
 
 const RegisterForm = ({ setPassword, setEmail, errorMessage, handleRegister, setFullName }: RegisterFormProps) => {
   return (
-    <form className="mt-8 space-y-6">
+    <form className="mt-8 space-y-6" onSubmit={(e) => handleRegister(e)}>
       <div className="rounded-md shadow-sm gap-4 flex flex-col">
         <InputFields setPassword={setPassword} setEmail={setEmail} setFullName={setFullName} />
       </div>
@@ -20,7 +20,7 @@ const RegisterForm = ({ setPassword, setEmail, errorMessage, handleRegister, set
       {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
 
       <div>
-        <RegisterButton handleRegister={(e) => handleRegister(e)} />
+        <RegisterButton />
       </div>
     </form>
   );

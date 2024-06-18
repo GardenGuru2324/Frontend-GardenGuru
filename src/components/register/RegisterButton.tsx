@@ -1,25 +1,12 @@
-import { Button } from "@mui/material";
-
-interface RegisterButtonProps {
-  handleRegister: (event: React.FormEvent) => void;
-}
-
-const RegisterButton = ({ handleRegister }: RegisterButtonProps) => {
+const RegisterButton = () => {
   return (
-    <Button
-      variant="contained"
-      sx={{
-        width: "100%",
-        backgroundColor: "#1A4D2E",
-        borderRadius: 2,
-        "&:hover": {
-          backgroundColor: "#14522C",
-        },
-      }}
-      onClick={(e) => handleRegister(e)}
+    <button
+      type="submit"
+      className="uppercase text-white text-center w-full rounded-lg p-2"
+      style={{ backgroundColor: "#1A4D2E" }}
     >
       Sign Up
-    </Button>
+    </button>
   );
 };
 

@@ -11,7 +11,7 @@ interface LoginFormProps {
 
 const LoginForm = ({ setPassword, setEmail, errorMessage, handleLogin }: LoginFormProps) => {
   return (
-    <form className="mt-8 space-y-6">
+    <form className="mt-8 space-y-6" onSubmit={(e) => handleLogin(e)}>
       <div className="rounded-md shadow-sm gap-4 flex flex-col">
         <InputFields setPassword={setPassword} setEmail={setEmail} />
       </div>
@@ -19,7 +19,7 @@ const LoginForm = ({ setPassword, setEmail, errorMessage, handleLogin }: LoginFo
       {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
 
       <div>
-        <LoginButton handleLogin={(e) => handleLogin(e)} />
+        <LoginButton />
       </div>
     </form>
   );
