@@ -21,8 +21,7 @@ export const postLogin = async (email: string, password: string): Promise<LoginR
 		
 		return response.data as LoginResponse;
 	} catch (error: any) {
-		console.log(error);
-		
+		console.log(baseUrl);
 		if (axios.isAxiosError(error) && error.response) {
 			return {
 				error: true,
