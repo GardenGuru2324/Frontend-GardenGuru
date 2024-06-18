@@ -6,10 +6,10 @@ const SignUpButton = () => {
       variant="contained"
       sx={{
         width: "100%",
-        backgroundColor: "#1A4D2E",
+        backgroundColor: "black",
         borderRadius: 2,
         "&:hover": {
-          backgroundColor: "#14522C",
+          backgroundColor: "black",
         },
       }}
     >
