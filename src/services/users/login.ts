@@ -17,8 +17,12 @@ export interface LoginError {
 export const postLogin = async (email: string, password: string): Promise<LoginResponse | LoginError> => {
 	try {
 		const response = await axios.post(`${baseUrl}/login`, { email, password });
+		console.log(baseUrl);
+		
 		return response.data as LoginResponse;
 	} catch (error: any) {
+		console.log(error);
+		
 		if (axios.isAxiosError(error) && error.response) {
 			return {
 				error: true,

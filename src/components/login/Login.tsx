@@ -20,7 +20,6 @@ const Login = () => {
 		event.preventDefault();
 
 		const response = await loginUser(email, password);
-        console.log(response);
         
 		if ("error" in response && response.error) {
 			if (response.status) {
