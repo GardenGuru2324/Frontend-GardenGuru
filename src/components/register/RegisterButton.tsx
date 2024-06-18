@@ -1,12 +1,21 @@
+import { Button } from "@mui/material";
+
 const RegisterButton = () => {
   return (
-    <button
+    <Button
       type="submit"
-      className="uppercase text-white text-center w-full rounded-lg p-2"
-      style={{ backgroundColor: "#1A4D2E" }}
+      variant="contained"
+      sx={{
+        width: "100%",
+        backgroundColor: "#1A4D2E",
+        borderRadius: 2,
+        "&:hover": {
+          backgroundColor: "#1A4D2E",
+        },
+      }}
     >
       Sign Up
-    </button>
+    </Button>
   );
 };
 

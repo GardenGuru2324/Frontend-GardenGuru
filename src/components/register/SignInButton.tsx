@@ -13,7 +13,6 @@ const SignInButton = () => {
           "&:hover": {
             backgroundColor: "black",
           },
-          padding: 1,
         }}
       >
         Sign In
