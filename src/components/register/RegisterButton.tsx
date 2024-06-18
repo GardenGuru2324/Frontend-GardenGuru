@@ -1,10 +1,14 @@
-import { Button } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
 
-const RegisterButton = () => {
+interface RegisterButtonProps {
+  loading: boolean;
+}
+
+const RegisterButton = ({ loading }: RegisterButtonProps) => {
   return (
-    <Button
-      type="submit"
+    <LoadingButton
       variant="contained"
+      type="submit"
       sx={{
         width: "100%",
         backgroundColor: "#1A4D2E",
@@ -13,9 +17,10 @@ const RegisterButton = () => {
           backgroundColor: "#1A4D2E",
         },
       }}
+      loading={loading}
     >
       Sign Up
-    </Button>
+    </LoadingButton>
   );
 };
 

@@ -8,9 +8,17 @@ interface RegisterFormProps {
   setFullName: (email: string) => void;
   handleRegister: (event: React.FormEvent) => void;
   errorMessage: string;
+  loading: boolean;
 }
 
-const RegisterForm = ({ setPassword, setEmail, errorMessage, handleRegister, setFullName }: RegisterFormProps) => {
+const RegisterForm = ({
+  setPassword,
+  setEmail,
+  errorMessage,
+  handleRegister,
+  setFullName,
+  loading,
+}: RegisterFormProps) => {
   return (
     <form className="mt-8 space-y-6" onSubmit={(e) => handleRegister(e)}>
       <div className="rounded-md shadow-sm gap-4 flex flex-col">
@@ -20,7 +28,7 @@ const RegisterForm = ({ setPassword, setEmail, errorMessage, handleRegister, set
       {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
 
       <div>
-        <RegisterButton />
+        <RegisterButton loading={loading} />
       </div>
     </form>
   );

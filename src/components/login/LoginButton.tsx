@@ -1,10 +1,14 @@
-import { Button } from "@mui/material";
+import LoadingButton from "@mui/lab/LoadingButton";
 
-const LoginButton = () => {
+interface LoginButtonProps {
+  loading: boolean;
+}
+
+const LoginButton = ({ loading }: LoginButtonProps) => {
   return (
-    <Button
-      type="submit"
+    <LoadingButton
       variant="contained"
+      type="submit"
       sx={{
         width: "100%",
         backgroundColor: "#1A4D2E",
@@ -13,9 +17,10 @@ const LoginButton = () => {
           backgroundColor: "#1A4D2E",
         },
       }}
+      loading={loading}
     >
       Sign In
-    </Button>
+    </LoadingButton>
   );
 };
 

@@ -16,20 +16,25 @@ export default function Register() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [fullName, setFullName] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
 
   const handleRegister = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    setLoading(true);
 
     const response = await registerUser(email, fullName, password);
 
     if ("error" in response && response.error) {
       if (response.status) {
         setErrorMessage(response.data.message);
+        setLoading(false);
       }
     } else {
       login(response.userId!);
       navigate("/");
+      setLoading(false);
     }
   };
 
@@ -45,6 +50,7 @@ export default function Register() {
               setFullName={setFullName}
               setPassword={setPassword}
               errorMessage={errorMessage!}
+              loading={loading}
             />
           </div>
 
