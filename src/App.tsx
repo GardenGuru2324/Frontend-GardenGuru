@@ -23,8 +23,6 @@ export default function App() {
               <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/" element={<Login />} />
-                <Route path="/myPlants" element={<Login />} />
-                <Route path="/profile" element={<Login />} />
               </Routes>
             </>
           ) : (
