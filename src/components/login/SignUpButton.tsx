@@ -1,10 +1,6 @@
 import { Button } from "@mui/material";
 
-interface LoginButtonProps {
-	handleLogin: (event: React.FormEvent) => void;
-}
-
-const LoginButton = ({ handleLogin }: LoginButtonProps) => {
+const SignUpButton = () => {
 	return (
 		<Button
 		    variant="contained"
@@ -16,11 +12,10 @@ const LoginButton = ({ handleLogin }: LoginButtonProps) => {
 					backgroundColor: '#14522C',
 				},
 			}}
-			onClick={(e) => handleLogin(e)}
 		>
-			Sign In
+			Sign Up
 		</Button>
 	);
 };
 
-export default LoginButton;
+export default SignUpButton;

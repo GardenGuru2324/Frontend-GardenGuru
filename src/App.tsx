@@ -14,23 +14,19 @@ export default function App() {
 	const queryClient = new QueryClient();
 
 	return (
-		<div className="flex justify-between flex-col items-center h-screen w-full">
+		<div className="flex justify-between flex-col items-center h-screen w-full bg-customBackground">
 			<QueryClientProvider client={queryClient}>
 				<BrowserRouter>
-					{!isAuthenticated ? (
-						<div className="flex justify-center items-center h-screen w-full">
-							<Login/>
-						</div>
-					) :
+					{!isAuthenticated ? (<Login/>) :
 					(
-					<>
-						<Routes>
-							<Route path="/" element={<HomePage />} />
-							<Route path="/myPlants" element={<MyPlantsPage />} />
-							<Route path="/profile" element={<ProfilePage />} />
-						</Routes>
-						<BottomNavigationBar />
-					</>
+						<>
+							<Routes>
+								<Route path="/" element={<HomePage />} />
+								<Route path="/myPlants" element={<MyPlantsPage />} />
+								<Route path="/profile" element={<ProfilePage />} />
+							</Routes>
+							<BottomNavigationBar />
+						</>
 					)}
 					
 				</BrowserRouter>

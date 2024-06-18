@@ -8,8 +8,8 @@ const InputFields = ({ setEmail, setPassword }: InputFieldProps) => {
 		<div>
 			<div>
 				<input
-					placeholder="Email address or username"
-					className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+					placeholder="Email address"
+					className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
 					required={true}
 					type="email"
 					name="email"
@@ -20,7 +20,7 @@ const InputFields = ({ setEmail, setPassword }: InputFieldProps) => {
 			<div className="mt-4">
 				<input
 					placeholder="Password"
-					className="appearance-none relative block w-full px-3 py-3 border border-gray-700 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+					className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
 					required={true}
 					type="password"
 					name="password"

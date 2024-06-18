@@ -4,6 +4,7 @@ import useLogin from "../../hooks/useLogin";
 import ErrorMessage from "./ErrorMessasge";
 import InputFields from "./InputFields";
 import LoginButton from "./LoginButton";
+import SignUpButton from "./SignUpButton";
 
 
 const Login = () => {
@@ -31,12 +32,12 @@ const Login = () => {
 	};
 
 	return (
-		<div className=" bg-slate-600 w-full h-screen flex justify-center items-center">
+		<div className="w-full h-screen flex justify-center items-center bg-[url('/login-bg.png')] bg-cover bg-center">
 			<div className="max-w-lg w-full m-6">
-				<div className="box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-					<div className="p-8">
+				<div className="bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg rounded-3xl">
+					<div className="px-8 py-6">
 						<h2 className="text-center text-3xl font-extrabold text-white">Welcome Back</h2>
-						<p className="mt-4 text-center text-gray-400">Sign in to continue</p>
+						<p className="mt-4 text-center">Enter your account to login for this app</p>
 						<form className="mt-8 space-y-6">
 							<div className="rounded-md shadow-sm gap-4 flex flex-col">
 								<InputFields setPassword={setPassword} setEmail={setEmail} />
@@ -49,11 +50,15 @@ const Login = () => {
 							</div>
 						</form>
 					</div>
-					<div className="px-8 py-4 bg-gray-700 text-center">
-						<span className="text-gray-400">Don't have an account? </span>
-						<a className="font-medium text-indigo-500 hover:text-indigo-400" href="#">
-							Sign up
-						</a>
+
+					<div className="flex items-center justify-center px-6">
+						<div className="flex-grow border-t border-black"></div>
+    					<span className="px-4">or sign up</span>
+    					<div className="flex-grow border-t border-black"></div>
+					</div>
+
+					<div className="px-8 py-6 text-center">
+						<SignUpButton/>
 					</div>
 				</div>
 			</div>
