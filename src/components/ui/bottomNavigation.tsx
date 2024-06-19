@@ -3,7 +3,7 @@ import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import { useState } from "react";
 import { Home, Sprout, UserRound } from "lucide-react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function BottomNavigationBar() {
   const [value, setValue] = useState(0);
@@ -32,7 +32,7 @@ export function BottomNavigationBar() {
           }}
           label="Home"
           icon={<Home />}
-          component={Link}
+          component={NavLink}
           to="/"
         />
         <BottomNavigationAction
@@ -44,7 +44,7 @@ export function BottomNavigationBar() {
           }}
           label="Plants"
           icon={<Sprout />}
-          component={Link}
+          component={NavLink}
           to="/myPlants"
         />
         <BottomNavigationAction
@@ -56,7 +56,7 @@ export function BottomNavigationBar() {
           }}
           label="Profile"
           icon={<UserRound />}
-          component={Link}
+          component={NavLink}
           to="/profile"
         />
       </BottomNavigation>

@@ -1,41 +1,19 @@
-import { BottomNavigationBar } from "./components/ui/bottomNavigation";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MyPlantsPage from "./pages/myPlantsPage";
-import HomePage from "./pages/homePage";
-import ProfilePage from "./pages/ProfilePage";
+import { RouterProvider } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./contexts/AuthContext";
-import Login from "./components/login/Login";
-import Register from "./components/register/Register";
+import { createRouter } from "./routes/routes";
 
 export default function App() {
   const { isAuthenticated } = useContext(AuthContext);
+  const router = createRouter(isAuthenticated);
 
   const queryClient = new QueryClient();
 
   return (
     <div className="flex justify-between flex-col items-center h-full w-full bg-customBackground">
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          {!isAuthenticated ? (
-            <>
-              <Routes>
-                <Route path="/register" element={<Register />} />
-                <Route path="/" element={<Login />} />
-              </Routes>
-            </>
-          ) : (
-            <>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/myPlants" element={<MyPlantsPage />} />
-                <Route path="/profile" element={<ProfilePage />} />
-              </Routes>
-              <BottomNavigationBar />
-            </>
-          )}
-        </BrowserRouter>
+        <RouterProvider router={router} />
       </QueryClientProvider>
     </div>
   );

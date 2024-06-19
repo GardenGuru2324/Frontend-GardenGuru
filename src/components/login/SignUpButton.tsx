@@ -1,9 +1,9 @@
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const SignUpButton = () => {
   return (
-    <Link to="/register">
+    <NavLink to="/register">
       <Button
         variant="contained"
         sx={{
@@ -17,7 +17,7 @@ const SignUpButton = () => {
       >
         Register
       </Button>
-    </Link>
+    </NavLink>
   );
 };
 
