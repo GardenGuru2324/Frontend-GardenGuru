@@ -15,7 +15,7 @@ const SignInButton = () => {
           },
         }}
       >
-        Sign In
+        Log In
       </Button>
     </Link>
   );

@@ -15,7 +15,7 @@ const SignUpButton = () => {
           },
         }}
       >
-        Sign Up
+        Register
       </Button>
     </Link>
   );

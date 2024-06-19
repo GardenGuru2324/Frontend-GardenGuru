@@ -1,10 +1,11 @@
 import LoadingButton from "@mui/lab/LoadingButton";
 
-interface LoginButtonProps {
+interface SubmitButtonProps {
+  text: string;
   loading: boolean;
 }
 
-const LoginButton = ({ loading }: LoginButtonProps) => {
+const SubmitButton = ({ loading, text }: SubmitButtonProps) => {
   return (
     <LoadingButton
       variant="contained"
@@ -19,9 +20,9 @@ const LoginButton = ({ loading }: LoginButtonProps) => {
       }}
       loading={loading}
     >
-      Sign In
+      {text}
     </LoadingButton>
   );
 };
 
-export default LoginButton;
+export default SubmitButton;

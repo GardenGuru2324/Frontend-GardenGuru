@@ -1,6 +1,6 @@
-import ErrorMessage from "./ErrorMessasge";
+import ErrorMessage from "../errors/ErrorMessasge";
+import SubmitButton from "../ui/SubmitButton";
 import InputFields from "./InputFields";
-import RegisterButton from "./RegisterButton";
 
 interface RegisterFormProps {
   setPassword: (password: string) => void;
@@ -27,9 +27,7 @@ const RegisterForm = ({
 
       {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
 
-      <div>
-        <RegisterButton loading={loading} />
-      </div>
+      <SubmitButton loading={loading} text="Register" />
     </form>
   );
 };

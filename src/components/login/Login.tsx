@@ -3,8 +3,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 import useLogin from "../../hooks/useLogin";
 import SignUpButton from "./SignUpButton";
 import LoginForm from "./LoginForm";
-import LoginHeader from "./LoginHeader";
-import Middel from "../ui/Middel";
+import FormHeader from "../ui/FormHeader";
+import TextDivider from "../ui/TextDivider";
 
 const Login = () => {
   const { loginUser } = useLogin();
@@ -39,7 +39,7 @@ const Login = () => {
       <div className="max-w-lg w-full m-6">
         <div className="bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg rounded-3xl shadow-2xl">
           <div className="px-8 py-6">
-            <LoginHeader />
+            <FormHeader title="Welcome Back" text="Enter your account to login for this app" />
             <LoginForm
               setEmail={setEmail}
               setPassword={setPassword}
@@ -50,7 +50,7 @@ const Login = () => {
           </div>
 
           <div className="flex items-center justify-center px-6">
-            <Middel text="or sign up" />
+            <TextDivider text="or sign up" />
           </div>
 
           <div className="px-8 py-6 text-center">

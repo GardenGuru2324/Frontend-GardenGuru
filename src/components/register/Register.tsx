@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import Middel from "../ui/Middel";
 import RegisterForm from "./RegisterForm";
-import RegisterHeader from "./RegisterHeader";
 import SignInButton from "./SignInButton";
 import useRegister from "../../hooks/useRegister";
+import FormHeader from "../ui/FormHeader";
+import TextDivider from "../ui/TextDivider";
 
 export default function Register() {
   let navigate = useNavigate();
@@ -43,7 +43,7 @@ export default function Register() {
       <div className="max-w-lg w-full m-6">
         <div className="bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg rounded-3xl shadow-2xl">
           <div className="px-8 py-6">
-            <RegisterHeader />
+            <FormHeader title="Welcome" text="Enter your account to register for this app" />
             <RegisterForm
               handleRegister={handleRegister}
               setEmail={setEmail}
@@ -55,7 +55,7 @@ export default function Register() {
           </div>
 
           <div className="flex items-center justify-center px-6">
-            <Middel text="already have an account" />
+            <TextDivider text="I already have an account" />
           </div>
 
           <div className="px-8 py-6 text-center">

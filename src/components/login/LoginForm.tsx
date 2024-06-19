@@ -1,6 +1,6 @@
-import ErrorMessage from "./ErrorMessasge";
+import ErrorMessage from "../errors/ErrorMessasge";
+import SubmitButton from "../ui/SubmitButton";
 import InputFields from "./InputFields";
-import LoginButton from "./LoginButton";
 
 interface LoginFormProps {
   setPassword: (password: string) => void;
@@ -19,9 +19,7 @@ const LoginForm = ({ setPassword, setEmail, errorMessage, handleLogin, loading }
 
       {errorMessage && <ErrorMessage errorMessage={errorMessage} />}
 
-      <div>
-        <LoginButton loading={loading} />
-      </div>
+      <SubmitButton loading={loading} text="Log in" />
     </form>
   );
 };

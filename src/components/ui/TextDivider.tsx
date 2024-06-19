@@ -1,7 +1,7 @@
-interface MiddelProps {
+interface TextDividerProps {
   text: string;
 }
-const Middel = ({ text }: MiddelProps) => {
+const TextDivider = ({ text }: TextDividerProps) => {
   return (
     <>
       <div className="flex-grow border-t border-black"></div>
@@ -11,4 +11,4 @@ const Middel = ({ text }: MiddelProps) => {
   );
 };
 
-export default Middel;
+export default TextDivider;
