@@ -43,7 +43,7 @@ export function BottomNavigationBar() {
               color: "white",
             },
           }}
-          label="Plants"
+          label="My Plants"
           icon={<Sprout />}
           component={NavLink}
           to={routerEnum.MY_PLANTS}

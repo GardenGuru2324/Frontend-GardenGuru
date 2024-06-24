@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import useLogin from "../../hooks/useLogin";
-import SignUpButton from "./SignUpButton";
-import LoginForm from "./LoginForm";
-import FormHeader from "../ui/FormHeader";
-import TextDivider from "../ui/TextDivider";
+import FormHeader from "../ui/formHeader";
+import TextDivider from "../ui/textDivider";
+import LoginForm from "./loginForm";
+import SignUpButton from "./signUpButton";
 
 const Login = () => {
   const { loginUser } = useLogin();

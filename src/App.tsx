@@ -11,7 +11,7 @@ export default function App() {
   const queryClient = new QueryClient();
 
   return (
-    <div className="flex justify-between flex-col items-center h-full w-full bg-customBackground">
+    <div className="flex flex-col justify-between items-center min-h-screen h-full w-full bg-customBackground">
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>
