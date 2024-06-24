@@ -4,6 +4,7 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import { useState } from "react";
 import { Home, Sprout, UserRound } from "lucide-react";
 import { NavLink } from "react-router-dom";
+import { routerEnum } from "../../routes/routesEnum";
 
 export function BottomNavigationBar() {
   const [value, setValue] = useState(0);
@@ -33,7 +34,7 @@ export function BottomNavigationBar() {
           label="Home"
           icon={<Home />}
           component={NavLink}
-          to="/"
+          to={routerEnum.HOME}
         />
         <BottomNavigationAction
           sx={{
@@ -45,7 +46,7 @@ export function BottomNavigationBar() {
           label="Plants"
           icon={<Sprout />}
           component={NavLink}
-          to="/myPlants"
+          to={routerEnum.MY_PLANTS}
         />
         <BottomNavigationAction
           sx={{
@@ -57,7 +58,7 @@ export function BottomNavigationBar() {
           label="Profile"
           icon={<UserRound />}
           component={NavLink}
-          to="/profile"
+          to={routerEnum.PROFILE}
         />
       </BottomNavigation>
     </Box>

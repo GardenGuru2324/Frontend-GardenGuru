@@ -1,9 +1,10 @@
 import { Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
+import { routerEnum } from "../../routes/routesEnum";
 
 const SignInButton = () => {
   return (
-    <NavLink to="/">
+    <NavLink to={routerEnum.LOGIN}>
       <Button
         variant="contained"
         sx={{

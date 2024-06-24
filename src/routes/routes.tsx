@@ -5,11 +5,12 @@ import HomePage from "../pages/homePage";
 import MyPlantsPage from "../pages/myPlantsPage";
 import ProfilePage from "../pages/ProfilePage";
 import { BottomNavigationBar } from "../components/ui/bottomNavigation";
+import { routerEnum } from "./routesEnum";
 
 export const createRouter = (isAuthenticated: boolean) => {
   return createBrowserRouter([
     {
-      path: "/",
+      path: routerEnum.HOME,
       element: isAuthenticated ? (
         <>
           <HomePage /> <BottomNavigationBar />
@@ -19,11 +20,11 @@ export const createRouter = (isAuthenticated: boolean) => {
       ),
     },
     {
-      path: "/register",
+      path: routerEnum.REGISTER,
       element: !isAuthenticated ? <Register /> : <HomePage />,
     },
     {
-      path: "/myPlants",
+      path: routerEnum.MY_PLANTS,
       element: isAuthenticated ? (
         <>
           <MyPlantsPage /> <BottomNavigationBar />
@@ -33,7 +34,7 @@ export const createRouter = (isAuthenticated: boolean) => {
       ),
     },
     {
-      path: "/profile",
+      path: routerEnum.PROFILE,
       element: isAuthenticated ? (
         <>
           <ProfilePage /> <BottomNavigationBar />
