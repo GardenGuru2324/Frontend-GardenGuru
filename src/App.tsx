@@ -6,6 +6,7 @@ import { createRouter } from "./routes/routes";
 
 export default function App() {
   const { isAuthenticated } = useContext(AuthContext);
+
   const router = createRouter(isAuthenticated);
 
   const queryClient = new QueryClient();
