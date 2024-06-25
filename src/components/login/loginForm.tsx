@@ -1,6 +1,6 @@
-import ErrorMessage from "../errors/ErrorMessasge";
-import SubmitButton from "../ui/SubmitButton";
-import InputFields from "./InputFields";
+import ErrorMessage from "../errors/errorMessage";
+import SubmitButton from "../ui/submitButton";
+import InputFields from "./inputFields";
 
 interface LoginFormProps {
   setPassword: (password: string) => void;

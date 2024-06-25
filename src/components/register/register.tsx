@@ -1,27 +1,30 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import useLogin from "../../hooks/useLogin";
-import SignUpButton from "./SignUpButton";
-import LoginForm from "./LoginForm";
-import FormHeader from "../ui/FormHeader";
-import TextDivider from "../ui/TextDivider";
+import useRegister from "../../hooks/useRegister";
+import RegisterForm from "./registerForm";
+import SignInButton from "./signInButton";
+import FormHeader from "../ui/formHeader";
+import TextDivider from "../ui/textDivider";
 
-const Login = () => {
-  const { loginUser } = useLogin();
+export default function Register() {
+  let navigate = useNavigate();
+  const { registerUser } = useRegister();
 
   const { login } = useContext(AuthContext);
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [fullName, setFullName] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
 
-  const handleLogin = async (event: React.FormEvent) => {
+  const handleRegister = async (event: React.FormEvent) => {
     event.preventDefault();
 
     setLoading(true);
 
-    const response = await loginUser(email, password);
+    const response = await registerUser(email, fullName, password);
 
     if ("error" in response && response.error) {
       if (response.status) {
@@ -30,6 +33,7 @@ const Login = () => {
       }
     } else {
       login(response.userId!);
+      navigate("/");
       setLoading(false);
     }
   };
@@ -39,27 +43,26 @@ const Login = () => {
       <div className="max-w-lg w-full m-6">
         <div className="bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg rounded-3xl shadow-2xl">
           <div className="px-8 py-6">
-            <FormHeader title="Welcome Back" text="Enter your account to login for this app" />
-            <LoginForm
+            <FormHeader title="Welcome" text="Enter your account to register for this app" />
+            <RegisterForm
+              handleRegister={handleRegister}
               setEmail={setEmail}
+              setFullName={setFullName}
               setPassword={setPassword}
               errorMessage={errorMessage!}
-              handleLogin={handleLogin}
               loading={loading}
             />
           </div>
 
           <div className="flex items-center justify-center px-6">
-            <TextDivider text="or sign up" />
+            <TextDivider text="I already have an account" />
           </div>
 
           <div className="px-8 py-6 text-center">
-            <SignUpButton />
+            <SignInButton />
           </div>
         </div>
       </div>
     </div>
   );
-};
-
-export default Login;
+}
