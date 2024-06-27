@@ -9,7 +9,7 @@ export default function ProfilePage() {
   return (
     <div className="flex justify-center items-center flex-wrap h-screen">
       <Link to={routerEnum.LOGIN}>
-        <Button variant="contained" onClick={() => logout()}>
+        <Button variant="contained" onClick={() => logout()} id="logout-button">
           Logout
         </Button>
       </Link>

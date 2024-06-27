@@ -19,6 +19,7 @@ const SubmitButton = ({ loading, text }: SubmitButtonProps) => {
         },
       }}
       loading={loading}
+      id="submit-button"
     >
       {text}
     </LoadingButton>

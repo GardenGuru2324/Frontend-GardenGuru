@@ -20,7 +20,7 @@ const RegisterForm = ({
   loading,
 }: RegisterFormProps) => {
   return (
-    <form className="mt-8 space-y-6" onSubmit={(e) => handleRegister(e)}>
+    <form className="mt-8 space-y-6" onSubmit={(e) => handleRegister(e)} id="register-form">
       <div className="rounded-md shadow-sm gap-4 flex flex-col">
         <InputFields setPassword={setPassword} setEmail={setEmail} setFullName={setFullName} />
       </div>

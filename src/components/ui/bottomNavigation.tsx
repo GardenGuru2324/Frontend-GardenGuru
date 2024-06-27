@@ -25,6 +25,7 @@ export function BottomNavigationBar() {
         }}
       >
         <BottomNavigationAction
+          id="home-page-navigation-button"
           sx={{
             color: "black",
             "&.Mui-selected": {
@@ -37,6 +38,7 @@ export function BottomNavigationBar() {
           to={routerEnum.HOME}
         />
         <BottomNavigationAction
+          id="myPlants-page-navigation-button"
           sx={{
             color: "black",
             "&.Mui-selected": {
@@ -49,6 +51,7 @@ export function BottomNavigationBar() {
           to={routerEnum.MY_PLANTS}
         />
         <BottomNavigationAction
+          id="profile-page-navigation-button"
           sx={{
             color: "black",
             "&.Mui-selected": {

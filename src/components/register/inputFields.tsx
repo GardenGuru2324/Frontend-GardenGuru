@@ -14,7 +14,7 @@ const InputFields = ({ setEmail, setPassword, setFullName }: InputFieldProps) =>
           required={true}
           type="email"
           name="email"
-          id="email"
+          id="email-input"
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
@@ -26,7 +26,7 @@ const InputFields = ({ setEmail, setPassword, setFullName }: InputFieldProps) =>
           required={true}
           type="text"
           name="text"
-          id="text"
+          id="fullName-input"
           onChange={(e) => setFullName(e.target.value)}
         />
       </div>
@@ -38,7 +38,7 @@ const InputFields = ({ setEmail, setPassword, setFullName }: InputFieldProps) =>
           required={true}
           type="password"
           name="password"
-          id="password"
+          id="password-input"
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
