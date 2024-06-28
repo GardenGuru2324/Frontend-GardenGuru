@@ -30,8 +30,8 @@ export default function MyPlantsPage() {
       <PlantLocations />
 
       <div className="flex justify-center items-center flex-wrap">
-        {plants!.map((plant) => (
-          <PlantCard plant={plant} key={plant.plantId} />
+        {plants!.map((plant, index) => (
+          <PlantCard plant={plant} key={plant.plantId} index={index} />
         ))}
       </div>
     </div>

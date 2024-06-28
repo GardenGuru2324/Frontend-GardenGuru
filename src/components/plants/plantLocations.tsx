@@ -22,12 +22,16 @@ const PlantLocations = () => {
   ];
 
   return (
-    <div className="flex max-w-[300px] gap-2 w-full mt-4 font-semibold overflow-x-auto whitespace-nowrap">
+    <div
+      className="flex max-w-[300px] gap-2 w-full mt-4 font-semibold overflow-x-auto whitespace-nowrap"
+      id="locations-section"
+    >
       {plantLocations.map((plantLocation, index) => (
         <p
           key={index}
           onClick={() => setSelectedLocation(plantLocation)}
           className={selectedLocation === plantLocation ? "underline decoration-[#4F6F52]" : ""}
+          id={`location-${index}`}
         >
           {plantLocation}
         </p>

@@ -4,7 +4,10 @@ interface ErrorMessageProps {
 
 const ErrorMessage = ({ errorMessage }: ErrorMessageProps) => {
   return (
-    <div className="flex justify-center items-center bg-red-700 text-white p-2 rounded-lg text-center">
+    <div
+      className="flex justify-center items-center bg-red-700 text-white p-2 rounded-lg text-center"
+      id="form-error-message"
+    >
       <p>{errorMessage}</p>
     </div>
   );
