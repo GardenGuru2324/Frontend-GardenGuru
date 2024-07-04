@@ -1,0 +1,5 @@
+[submodule "Frontend-playwright-GardenGuru"]
+	path = Frontend-playwright-GardenGuru
+	url = https://github.com/GardenGuru2324/Frontend-playwright-GardenGuru.git
+	branch = dev
+	ignore = dirty

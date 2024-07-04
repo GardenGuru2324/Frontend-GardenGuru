@@ -1,0 +1,60 @@
+name: IC-workflow
+
+on:
+    pull_request:
+        branches: [dev]
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+              with:
+                  submodules: 'recursive'
+
+            - name: Update Submodule
+              run: |
+                  git submodule update --init
+                  cd Frontend-playwright-GardenGuru
+                  git fetch origin dev
+                  git checkout dev
+                  
+            - name: Use Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: '20'
+
+            - name: Install Dependencies
+              run: npm install
+
+            - name: Check Formatting
+              run: npm run format:check
+
+            - name: Run Linter
+              run: npm run lint
+
+            - name: Install Tests Dependencies
+              run: |
+                  cd Frontend-playwright-GardenGuru
+                  npm install
+
+            - name: Run Tests
+              env:
+                BASE_URL: ${{ secrets.BASE_URL }}
+                BASE_URL_TEST: ${{ secrets.BASE_URL_TEST }}
+                BACKEND: ${{ secrets.BACKEND }}
+                USEREMAILLOGIN: ${{ secrets.USEREMAILLOGIN }}
+                USERPASSWORDLOGIN: ${{ secrets.USERPASSWORDLOGIN }}
+              run: |
+                  cd Frontend-playwright-GardenGuru
+                  touch .env
+                  echo userEmailLogin=${{ secrets.USEREMAILLOGIN }} >> .env
+                  echo userPasswordLogin=${{ secrets.USERPASSWORDLOGIN }} >> .env
+                  echo BACKEND=${{ secrets.BACKEND }} >> .env
+                  echo BASE_URL=${{ secrets.BASE_URL_TEST }} >> .env
+                  cd ..
+                  touch .env
+                  echo BASE_URL=${{ secrets.BASE_URL }} >> .env
+                  npm run ic:test
