@@ -1,7 +1,8 @@
-import { useContext } from 'react';
-import { AuthContext } from '../contexts/AuthContext';
 import { Button } from '@mui/material';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import { AuthContext } from '../contexts/AuthContext';
 import { routerEnum } from '../routes/routesEnum';
 
 export default function ProfilePage() {

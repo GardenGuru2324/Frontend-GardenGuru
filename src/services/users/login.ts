@@ -9,6 +9,7 @@ export interface LoginResponse {
 export interface LoginError {
 	error: true;
 	status?: number;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	data?: any;
 	message?: string;
 	userId?: string;
@@ -24,6 +25,7 @@ export const postLogin = async (
 			password,
 		});
 		return response.data as LoginResponse;
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	} catch (error: any) {
 		if (axios.isAxiosError(error) && error.response) {
 			return {

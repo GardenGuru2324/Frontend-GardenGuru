@@ -1,9 +1,10 @@
-import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import { useState } from 'react';
+import Box from '@mui/material/Box';
 import { Home, Sprout, UserRound } from 'lucide-react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+
 import { routerEnum } from '../../routes/routesEnum';
 
 export function BottomNavigationBar() {

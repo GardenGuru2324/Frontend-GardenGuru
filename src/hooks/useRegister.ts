@@ -1,7 +1,7 @@
 import {
+	postRegister,
 	RegisterError,
 	RegisterResponse,
-	postRegister,
 } from '../services/users/register';
 
 const useRegister = () => {

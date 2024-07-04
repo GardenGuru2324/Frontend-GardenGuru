@@ -1,6 +1,7 @@
+import { useContext } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RouterProvider } from 'react-router-dom';
-import { useContext } from 'react';
+
 import { AuthContext } from './contexts/AuthContext';
 import { createRouter } from './routes/routes';
 

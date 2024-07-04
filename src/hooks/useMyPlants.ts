@@ -1,5 +1,6 @@
-import { useQuery } from 'react-query';
 import { AxiosError } from 'axios';
+import { useQuery } from 'react-query';
+
 import { Plant } from '../models/plant/plant';
 import { getMyPlants } from '../services/plants/myPlants';
 

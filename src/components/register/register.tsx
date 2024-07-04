@@ -1,14 +1,16 @@
 import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { AuthContext } from '../../contexts/AuthContext';
 import useRegister from '../../hooks/useRegister';
-import RegisterForm from './registerForm';
-import SignInButton from './signInButton';
 import FormHeader from '../ui/formHeader';
 import TextDivider from '../ui/textDivider';
 
+import RegisterForm from './registerForm';
+import SignInButton from './signInButton';
+
 export default function Register() {
-	let navigate = useNavigate();
+	const navigate = useNavigate();
 	const { registerUser } = useRegister();
 
 	const { login } = useContext(AuthContext);

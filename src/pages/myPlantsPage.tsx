@@ -1,11 +1,12 @@
 import { useContext } from 'react';
-import PlantCard from '../components/plants/plantCard';
-import Loading from '../components/ui/loading';
-import useMyPlants from '../hooks/useMyPlants';
-import { AuthContext } from '../contexts/AuthContext';
-import SearchField from '../components/plants/searchField';
-import PlantLocations from '../components/plants/plantLocations';
+
 import ErrorPage from '../components/errors/errorPage';
+import PlantCard from '../components/plants/plantCard';
+import PlantLocations from '../components/plants/plantLocations';
+import SearchField from '../components/plants/searchField';
+import Loading from '../components/ui/loading';
+import { AuthContext } from '../contexts/AuthContext';
+import useMyPlants from '../hooks/useMyPlants';
 
 export default function MyPlantsPage() {
 	const { userId } = useContext(AuthContext);

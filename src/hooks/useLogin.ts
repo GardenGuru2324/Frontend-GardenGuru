@@ -1,4 +1,4 @@
-import { LoginResponse, LoginError, postLogin } from '../services/users/login';
+import { LoginError, LoginResponse, postLogin } from '../services/users/login';
 
 const useLogin = () => {
 	const loginUser = async (

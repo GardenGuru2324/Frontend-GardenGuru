@@ -4,9 +4,9 @@ interface TextDividerProps {
 const TextDivider = ({ text }: TextDividerProps) => {
 	return (
 		<>
-			<div className="flex-grow border-t border-black"></div>
+			<div className="flex-grow border-t border-black" />
 			<span className="px-4">{text}</span>
-			<div className="flex-grow border-t border-black"></div>
+			<div className="flex-grow border-t border-black" />
 		</>
 	);
 };

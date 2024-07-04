@@ -1,8 +1,9 @@
-import React from 'react';
 import { AxiosError } from 'axios';
 import { Frown } from 'lucide-react';
+import React from 'react';
 
 interface ErrorComponentProps {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	error: AxiosError<unknown, any> | null;
 }
 
@@ -11,6 +12,7 @@ const hasMessage = (data: unknown): data is { message: string } => {
 		typeof data === 'object' &&
 		data !== null &&
 		'message' in data &&
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		typeof (data as any).message === 'string'
 	);
 };
