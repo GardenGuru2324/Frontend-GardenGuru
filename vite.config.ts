@@ -7,6 +7,6 @@ import process from 'process';
 export default defineConfig({
 	plugins: [react()],
 	define: {
-		'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL)
-	}
+		'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL),
+	},
 });

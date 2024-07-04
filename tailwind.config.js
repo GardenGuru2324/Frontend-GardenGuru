@@ -5,8 +5,8 @@ export default {
 		extend: {
 			colors: {
 				customBackground: '#F5EFE6',
-			}
-		}
+			},
+		},
 	},
-	plugins: []
+	plugins: [],
 };
