@@ -38,8 +38,8 @@ jobs:
             - name: Install Tests Dependencies
               run: |
                   cd Frontend-playwright-GardenGuru
-                  npm install
                   npx playwright install
+                  npm install
 
             - name: Run Tests
               env:
