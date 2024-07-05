@@ -39,8 +39,8 @@ jobs:
               run: |
                   cd Frontend-playwright-GardenGuru
                   npm install
-                  npx playwright install
                   npx playwright install-deps
+                  npx playwright install
 
             - name: Run Tests
               env:
