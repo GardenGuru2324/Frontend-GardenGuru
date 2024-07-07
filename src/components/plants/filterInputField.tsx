@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FilterContext } from "../../contexts/SearchContext";
+import { FilterContext } from "../../contexts/FilterContext";
 
 const FilterInputField = () => {
   const { search, setSearch } = useContext(FilterContext);

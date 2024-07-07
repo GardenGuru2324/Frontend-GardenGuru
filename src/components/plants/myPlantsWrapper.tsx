@@ -4,7 +4,7 @@ import Loading from "../ui/loading";
 import useMyPlants from "../../hooks/useMyPlants";
 import ErrorPage from "../errors/errorPage";
 import PlantCard from "./plantCard";
-import { FilterContext } from "../../contexts/SearchContext";
+import { FilterContext } from "../../contexts/FilterContext";
 
 export default function MyPlantsPageWrapper() {
   const minAmoutOfChar: number = 3;

@@ -1,7 +1,7 @@
 import SearchField from "../components/plants/searchField";
 import PlantLocations from "../components/plants/plantLocations";
 import MyPlantsPageWrapper from "../components/plants/myPlantsWrapper";
-import { FilterProvider } from "../contexts/SearchContext";
+import { FilterProvider } from "../contexts/FilterContext";
 
 export default function MyPlantsPage() {
   return (

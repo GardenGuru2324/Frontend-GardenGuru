@@ -1,6 +1,6 @@
 import { FilterX } from "lucide-react";
 import { useContext } from "react";
-import { FilterContext } from "../../contexts/SearchContext";
+import { FilterContext } from "../../contexts/FilterContext";
 import { Button } from "@mui/material";
 
 const FilterResetButton = () => {
