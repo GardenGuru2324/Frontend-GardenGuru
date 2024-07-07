@@ -1,21 +1,31 @@
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Home, Sprout, UserRound } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { routerEnum } from "../../routes/routesEnum";
 
+const pathToIndex = {
+  [routerEnum.HOME]: 0,
+  [routerEnum.MY_PLANTS]: 1,
+  [routerEnum.PROFILE]: 2,
+};
+
 export function BottomNavigationBar() {
+  const location = useLocation();
   const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    setValue(pathToIndex[location.pathname] || 0);
+  }, [location.pathname]);
 
   return (
     <Box sx={{ width: "100%", position: "sticky", bottom: 0 }}>
       <BottomNavigation
         value={value}
-        onChange={(event, newValue) => {
+        onChange={(_event, newValue) => {
           setValue(newValue);
-          console.log(event);
         }}
         sx={{
           borderTopLeftRadius: "50px",
