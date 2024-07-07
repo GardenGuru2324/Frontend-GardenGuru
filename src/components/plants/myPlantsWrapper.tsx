@@ -26,7 +26,7 @@ export default function MyPlantsPageWrapper() {
   }
 
   return (
-    <div className="flex justify-center items-center flex-wrap">
+    <div className="flex justify-center items-center flex-wrap max-w-[1400px] w-full">
       {plants!.map((plant, index) => (
         <PlantCard plant={plant} key={plant.plantId} index={index} />
       ))}

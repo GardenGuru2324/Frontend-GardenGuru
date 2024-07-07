@@ -21,7 +21,7 @@ export function BottomNavigationBar() {
   }, [location.pathname]);
 
   return (
-    <Box sx={{ width: "100%", position: "sticky", bottom: 0 }}>
+    <Box sx={{ maxWidth: "1400px", width: "100%", position: "sticky", bottom: 0 }}>
       <BottomNavigation
         value={value}
         onChange={(_event, newValue) => {
