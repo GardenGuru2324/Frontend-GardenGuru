@@ -1,6 +1,6 @@
 export default function HomePage() {
   return (
-    <div className="flex justify-center items-center flex-wrap h-screen">
+    <div className="m-auto">
       <p>HomePage</p>
     </div>
   );
