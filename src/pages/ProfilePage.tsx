@@ -7,7 +7,7 @@ import { routerEnum } from "../routes/routesEnum";
 export default function ProfilePage() {
   const { logout } = useContext(AuthContext);
   return (
-    <div className="m-auto">
+    <div className="flex justify-center items-center h-screen">
       <Link to={routerEnum.LOGIN}>
         <Button variant="contained" onClick={() => logout()} id="logout-button">
           Logout
