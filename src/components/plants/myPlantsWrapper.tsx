@@ -13,7 +13,6 @@ export default function MyPlantsPageWrapper() {
   const { plants, isError, isLoading, error } = useMyPlants(userId, search.length > minAmoutOfChar ? search : "");
 
   if (isLoading) {
-    // need to fix hight problem!!
     return (
       <div className="flex justify-center items-center h-screen w-full">
         <Loading />
