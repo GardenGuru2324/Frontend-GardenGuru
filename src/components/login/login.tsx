@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
     <div
-      className="w-full flex justify-center items-center bg-[url('/login-bg.png')] bg-cover bg-no-repeat bg-center"
+      className="w-full h-full flex justify-center items-center bg-[url('/login-bg.png')] bg-cover bg-no-repeat bg-center"
       style={{ height: "100svh", overflow: "hidden" }}
     >
       <div className="max-w-lg w-full m-6">
