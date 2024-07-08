@@ -12,12 +12,10 @@ export default function App() {
   const queryClient = new QueryClient();
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="h-full w-full bg-customBackground flex-1">
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </div>
+    <div className="min-h-screen flex flex-col items-center justify-center h-full w-full bg-customBackground">
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </div>
   );
 }
