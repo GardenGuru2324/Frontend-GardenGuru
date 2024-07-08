@@ -14,7 +14,7 @@ export default function MyPlantsPageWrapper() {
 
   if (isLoading) {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-[75vh]">
         <Loading />
       </div>
     );
