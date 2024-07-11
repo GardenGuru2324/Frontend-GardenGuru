@@ -39,7 +39,7 @@ export default function Register() {
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center bg-[url('/login-bg.png')] bg-cover bg-center">
+    <div className="w-full h-svh flex justify-center items-center bg-[url('/login-bg.png')] bg-cover bg-center">
       <div className="max-w-lg w-full m-6">
         <div className="bg-white bg-opacity-5 backdrop-blur-lg drop-shadow-lg rounded-3xl shadow-2xl">
           <div className="px-8 py-6">
