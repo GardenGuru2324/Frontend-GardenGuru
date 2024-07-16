@@ -21,7 +21,6 @@ export default function ProfilePage() {
 
   if (isError) {
     return (
-      // fix div weg bij errorPage en altijd div in de if over al doen!!
       <div className="flex items-center justify-center h-svh">
         <ErrorPage error={error} />
       </div>
