@@ -30,7 +30,7 @@ export default function ProfilePage() {
 
   return (
     <div>
-      <div className="w-svw h-64 bg-[#E8DFCA] flex justify-center items-center flex-col">
+      <div className="w-svw max-w-[1400px] h-64 bg-[#E8DFCA] flex justify-center items-center flex-col">
         <div
           className="mb-4 rounded-full max-w-[150px] max-h-[150px] w-full h-full bg-cover bg-no-repeat bg-center"
           style={{ backgroundImage: `url(${profile?.profilePicture})` }}
@@ -57,7 +57,12 @@ export default function ProfilePage() {
         </div>
         <div className="px-4 py-4">
           <Link to={routerEnum.LOGIN}>
-            <Button variant="contained" onClick={() => logout()} id="logout-button" className="w-full" color="error">
+            <Button
+              variant="contained"
+              onClick={() => logout()}
+              id="logout-button"
+              sx={{ backgroundColor: "#1A4D2E", width: "100%" }}
+            >
               Logout
             </Button>
           </Link>
