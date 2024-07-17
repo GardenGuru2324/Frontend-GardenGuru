@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../pages/homePage";
 import MyPlantsPage from "../pages/myPlantsPage";
-import ProfilePage from "../pages/ProfilePage";
+import ProfilePage from "../pages/profilePage";
 import { BottomNavigationBar } from "../components/ui/bottomNavigation";
 import { routerEnum } from "./routesEnum";
 import Login from "../components/login/login";

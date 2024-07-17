@@ -23,7 +23,7 @@ const ErrorPage = ({ error }: ErrorComponentProps) => {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen">
+    <div className="flex flex-col justify-center items-center h-[75vh] max-w-[1400px] w-full">
       <Frown color="red" size={100} />
       <p className="text-lg text-center p-2">{errorMessage}</p>
     </div>
