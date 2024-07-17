@@ -32,7 +32,7 @@ export default function ProfilePage() {
       <div className="w-svw max-w-[1400px] h-64 bg-[#E8DFCA] flex justify-center items-center flex-col">
         <div
           className="mb-4 rounded-full max-w-[150px] max-h-[150px] w-full h-full bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: `url(${profile?.profilePicture})` }}
+          style={{ backgroundImage: `url(${profile!.profilePicture})` }}
         ></div>
         <p className="text-black font-bold">Edit profile image</p>
       </div>
