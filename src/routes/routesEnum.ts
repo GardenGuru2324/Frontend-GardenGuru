@@ -3,5 +3,6 @@ export const routerEnum = {
   LOGIN: "/",
   REGISTER: "/register",
   MY_PLANTS: "/myPlants",
+  MY_PLANT_DETAILS: "/myPlants/:plantId",
   PROFILE: "/profile",
 };

@@ -6,6 +6,7 @@ import { BottomNavigationBar } from "../components/ui/bottomNavigation";
 import { routerEnum } from "./routesEnum";
 import Login from "../components/login/login";
 import Register from "../components/register/register";
+import MyPlantsDetailPage from "../pages/myPlantDetails";
 
 export const createRouter = (isAuthenticated: boolean) => {
   return createBrowserRouter([
@@ -38,6 +39,16 @@ export const createRouter = (isAuthenticated: boolean) => {
       element: isAuthenticated ? (
         <>
           <ProfilePage /> <BottomNavigationBar />
+        </>
+      ) : (
+        <Login />
+      ),
+    },
+    {
+      path: routerEnum.MY_PLANT_DETAILS,
+      element: isAuthenticated ? (
+        <>
+          <MyPlantsDetailPage />
         </>
       ) : (
         <Login />
