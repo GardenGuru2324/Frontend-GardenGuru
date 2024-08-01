@@ -9,7 +9,7 @@ export function BottomDetailSection() {
   const [value, setValue] = useState(0);
 
   return (
-    <Box sx={{ maxWidth: "1400px", width: "100%", position: "sticky", bottom: 0 }}>
+    <Box sx={{ maxWidth: "1400px", width: "100%" }}>
       <BottomNavigation
         value={value}
         onChange={(_event, newValue) => {
