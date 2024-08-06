@@ -12,12 +12,14 @@ const ImageMyPlantsDetails = ({ myPlant }: ImageMyPlantsDetailsProps) => {
           src={myPlant?.plantImage}
           alt={myPlant?.plantName}
           style={{ maxHeight: "350px", height: "100%", width: "100%", objectFit: "cover", objectPosition: "center" }}
+          id="myPlant-image"
         />
       ) : (
         <img
           src="/sad-plant.gif"
           alt={myPlant?.plantName}
           style={{ maxHeight: "350px", height: "100%", width: "100%", objectFit: "cover", objectPosition: "center" }}
+          id="myPlant-placeholder"
         />
       )}
     </div>

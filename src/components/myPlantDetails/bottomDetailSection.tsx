@@ -33,6 +33,7 @@ export function BottomDetailSection() {
             borderRadius: "30px",
           }}
           startIcon={<Sprout />}
+          id="delete-myPlant-button"
         >
           Delete plant
         </Button>

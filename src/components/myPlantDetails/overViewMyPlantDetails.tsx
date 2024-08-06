@@ -10,7 +10,7 @@ const OverviewMyPlantDetails = ({ myPlant }: OverviewMyPlantDetailsProps) => {
       <div className="text-white bg-[#1A4D2E] p-2 ml-4 mt-4 rounded-md w-[100px] h-[30px] flex items-center justify-center font-semibold">
         Overview
       </div>
-      <div className="m-4 flex flex-col gap-2">
+      <div className="m-4 flex flex-col gap-2" id="myPlant-details-section">
         {myPlant.plantAvgHeight && (
           <div className="flex justify-between w-full">
             <p>Average height</p>
