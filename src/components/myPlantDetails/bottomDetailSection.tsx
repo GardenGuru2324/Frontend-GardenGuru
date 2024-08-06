@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
-//import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import { Sprout } from "lucide-react";
