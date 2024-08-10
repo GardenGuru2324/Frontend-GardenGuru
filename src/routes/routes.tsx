@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/homePage";
 import MyPlantsPage from "../pages/myPlantsPage";
 import ProfilePage from "../pages/profilePage";
 import { BottomNavigationBar } from "../components/ui/bottomNavigation";
@@ -7,6 +6,7 @@ import { routerEnum } from "./routesEnum";
 import Login from "../components/login/login";
 import Register from "../components/register/register";
 import MyPlantsDetailPage from "../pages/myPlantDetails";
+import TreflePlantsPage from "../pages/treflePlantsPage";
 
 export const createRouter = (isAuthenticated: boolean) => {
   return createBrowserRouter([
@@ -14,7 +14,7 @@ export const createRouter = (isAuthenticated: boolean) => {
       path: routerEnum.HOME,
       element: isAuthenticated ? (
         <>
-          <HomePage /> <BottomNavigationBar />
+          <TreflePlantsPage /> <BottomNavigationBar />
         </>
       ) : (
         <Login />
@@ -22,7 +22,7 @@ export const createRouter = (isAuthenticated: boolean) => {
     },
     {
       path: routerEnum.REGISTER,
-      element: !isAuthenticated ? <Register /> : <HomePage />,
+      element: !isAuthenticated ? <Register /> : <TreflePlantsPage />,
     },
     {
       path: routerEnum.MY_PLANTS,
