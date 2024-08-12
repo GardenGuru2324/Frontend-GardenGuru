@@ -1,10 +1,4 @@
 export interface TreflePlant {
-  data: Info[];
-  links: TreflePlantLinks;
-  meta: Meta;
-}
-
-export interface Info {
   id: number;
   common_name: string;
   slug: string;
