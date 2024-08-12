@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
 import useMyPlantsDetails from "../hooks/useMyPlantDetails";
 import Loading from "../components/ui/loading";
 import ErrorPage from "../components/errors/errorPage";
@@ -7,10 +8,38 @@ import { BottomDetailSection } from "../components/myPlantDetails/bottomDetailSe
 import TopSectionMyPlantDetails from "../components/myPlantDetails/topSectionMyPlantDetails";
 import ImageMyPlantsDetails from "../components/myPlantDetails/imageMyPlantDetails";
 import OverviewMyPlantDetails from "../components/myPlantDetails/overViewMyPlantDetails";
+import { MyPlantDetailsContext } from "../contexts/MyPlantDetailsContext";
+import SuccesMessage from "../components/successes/succesMessage";
 
 export default function MyPlantsDetailPage() {
-  const { plantId } = useParams();
-  const { myPlant, isError, isLoading, error } = useMyPlantsDetails(plantId!);
+  const {
+    plantId,
+    setPlantId,
+    myPlant,
+    setMyPlant,
+    isError,
+    setIsError,
+    isLoading,
+    setIsLoading,
+    error,
+    setError,
+    message,
+  } = useContext(MyPlantDetailsContext);
+  const { plantId: paramPlantId } = useParams();
+  paramPlantId && setPlantId(paramPlantId);
+  const { myPlant: paramMyPlant, isError: paramIsError, isLoading: paramIsLoading, error: paramError } = useMyPlantsDetails(plantId!);
+  paramMyPlant && setMyPlant(paramMyPlant);
+  setIsError(paramIsError);
+  setIsLoading(paramIsLoading);
+  paramError && setError(paramError);
+
+  if (message != "") {
+    return (
+      <div className="flex justify-center items-center h-svh">
+        <SuccesMessage succesMessage={message} />
+      </div>
+    );
+  }
 
   if (isLoading) {
     return (

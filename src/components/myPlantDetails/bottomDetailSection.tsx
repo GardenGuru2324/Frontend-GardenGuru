@@ -1,11 +1,31 @@
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { Sprout } from "lucide-react";
 
+import { AuthContext } from "../../contexts/AuthContext";
+import useDeleteMyPlant from "../../hooks/useDeleteMyPlant";
+import { MyPlantDetailsContext } from "../../contexts/MyPlantDetailsContext";
+
 export function BottomDetailSection() {
+  const { userId } = useContext(AuthContext);
+  const {
+    plantId,
+    setIsError,
+    setIsLoading,
+    setError,
+    setMessage
+  } = useContext(MyPlantDetailsContext);
   const [value, setValue] = useState(0);
+
+  const handleDeleteMyPlant = () => {
+    const { message, isError: paramIsError, isLoading: paramIsLoading, error: paramError } = useDeleteMyPlant(userId, plantId);
+    message && setMessage(message);
+    setIsError(paramIsError);
+    setIsLoading(paramIsLoading);
+    paramError && setError(paramError);
+  }
 
   return (
     <Box sx={{ maxWidth: "1400px", width: "100%" }}>
@@ -34,6 +54,7 @@ export function BottomDetailSection() {
           }}
           startIcon={<Sprout />}
           id="delete-myPlant-button"
+          onClick={() => handleDeleteMyPlant()}
         >
           Delete plant
         </Button>

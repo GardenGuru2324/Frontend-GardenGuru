@@ -7,6 +7,7 @@ import { routerEnum } from "./routesEnum";
 import Login from "../components/login/login";
 import Register from "../components/register/register";
 import MyPlantsDetailPage from "../pages/myPlantDetails";
+import { MyPlantDetailsProvider } from "../contexts/MyPlantDetailsContext";
 
 export const createRouter = (isAuthenticated: boolean) => {
   return createBrowserRouter([
@@ -48,7 +49,9 @@ export const createRouter = (isAuthenticated: boolean) => {
       path: routerEnum.MY_PLANT_DETAILS,
       element: isAuthenticated ? (
         <>
-          <MyPlantsDetailPage />
+          <MyPlantDetailsProvider>
+            <MyPlantsDetailPage />
+          </MyPlantDetailsProvider>
         </>
       ) : (
         <Login />
