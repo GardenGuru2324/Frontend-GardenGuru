@@ -1,4 +1,4 @@
-import PlantLocations from "../components/plants/plantLocations";
+//import PlantLocations from "../components/plants/plantLocations";
 import MyPlantsPageWrapper from "../components/plants/myPlantsWrapper";
 import { FilterProvider } from "../contexts/FilterContext";
 import SearchSection from "../components/plants/searchSection";
@@ -9,7 +9,7 @@ export default function MyPlantsPage() {
       <FilterProvider>
         <SearchSection />
 
-        <PlantLocations />
+        {/* <PlantLocations /> */}
 
         <MyPlantsPageWrapper />
       </FilterProvider>

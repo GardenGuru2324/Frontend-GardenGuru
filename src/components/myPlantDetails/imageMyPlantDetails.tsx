@@ -5,23 +5,29 @@ interface ImageMyPlantsDetailsProps {
 }
 
 const ImageMyPlantsDetails = ({ myPlant }: ImageMyPlantsDetailsProps) => {
+  const dummyImage = "https://i.ibb.co/sq4Lb8f/dummy-plant.png";
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    return (e.currentTarget.src = dummyImage);
+  };
+
   return (
     <div className="w-full max-h-[350px]">
-      {myPlant.plantImage ? (
-        <img
-          src={myPlant?.plantImage}
-          alt={myPlant?.plantName}
-          style={{ maxHeight: "350px", height: "100%", width: "100%", objectFit: "cover", objectPosition: "center" }}
-          id="myPlant-image"
-        />
-      ) : (
-        <img
-          src="/sad-plant.gif"
-          alt={myPlant?.plantName}
-          style={{ maxHeight: "350px", height: "100%", width: "100%", objectFit: "cover", objectPosition: "center" }}
-          id="myPlant-placeholder"
-        />
-      )}
+      <img
+        src={myPlant.plantImage}
+        alt={myPlant.plantName}
+        onError={(e) => {
+          handleImageError(e);
+        }}
+        style={{
+          maxHeight: "350px",
+          height: "100%",
+          width: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+        id="myPlant-image"
+      />
     </div>
   );
 };

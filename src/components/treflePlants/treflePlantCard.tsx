@@ -26,8 +26,8 @@ export default function TreflePlantCard({ treflePlant, index }: PlantCardPorps) 
             }}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {treflePlant.common_name}
+            <Typography gutterBottom variant="h5" component="div" className="truncate" title={treflePlant.common_name}>
+              {treflePlant.common_name ? treflePlant.common_name : "Plant has no name"}
             </Typography>
           </CardContent>
         </CardActionArea>
