@@ -45,7 +45,7 @@ const OverviewMyPlantDetails = ({ myPlant }: OverviewMyPlantDetailsProps) => {
 
         {myPlant.plantDaysToHarvest && <Detailsquare data={myPlant.plantDaysToHarvest} icon={Tractor} text="Days" />}
 
-        {myPlant.plantDaysToHarvest && (
+        {myPlant.plantMaxTemp && myPlant.plantMinTemp && (
           <Detailsquare
             data={createCelsiusFormat(myPlant.plantMaxTemp, myPlant.plantMinTemp)}
             icon={Thermometer}

@@ -7,6 +7,7 @@ import Login from "../components/login/login";
 import Register from "../components/register/register";
 import MyPlantsDetailPage from "../pages/myPlantDetails";
 import TreflePlantsPage from "../pages/treflePlantsPage";
+import TreflePlantDetailPage from "../pages/treflePlantDetails";
 
 export const createRouter = (isAuthenticated: boolean) => {
   return createBrowserRouter([
@@ -49,6 +50,16 @@ export const createRouter = (isAuthenticated: boolean) => {
       element: isAuthenticated ? (
         <>
           <MyPlantsDetailPage />
+        </>
+      ) : (
+        <Login />
+      ),
+    },
+    {
+      path: routerEnum.TREFLE_PLANT_DETAILS,
+      element: isAuthenticated ? (
+        <>
+          <TreflePlantDetailPage />
         </>
       ) : (
         <Login />
