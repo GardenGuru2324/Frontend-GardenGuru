@@ -9,7 +9,7 @@ import {
   UtensilsCrossed,
   BarChart4,
 } from "lucide-react";
-import Detailsquare from "./detailSquare";
+import Detailsquare from "../myPlantDetails/detailSquare";
 import { TreflePlantDetails } from "../../models/treflePlant/treflePlantDetails";
 
 interface OverviewMyPlantDetailsProps {
