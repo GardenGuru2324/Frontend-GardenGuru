@@ -18,7 +18,7 @@ interface OverviewMyPlantDetailsProps {
 
 const OverviewMyPlantDetails = ({ treflePlant }: OverviewMyPlantDetailsProps) => {
   const createCelsiusFormat = (maxTemp: number | null, minTemp: number | null): string => {
-    return `${minTemp} - ${maxTemp}`;
+    return `${minTemp} °C - ${maxTemp}`;
   };
 
   return (

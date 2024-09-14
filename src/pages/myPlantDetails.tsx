@@ -7,6 +7,7 @@ import { BottomDetailSection } from "../components/myPlantDetails/bottomDetailSe
 import TopSectionMyPlantDetails from "../components/myPlantDetails/topSectionMyPlantDetails";
 import ImageMyPlantsDetails from "../components/myPlantDetails/imageMyPlantDetails";
 import OverviewMyPlantDetails from "../components/myPlantDetails/overViewMyPlantDetails";
+import { routerEnum } from "../routes/routesEnum";
 
 export default function MyPlantsDetailPage() {
   const { plantId } = useParams();
@@ -31,7 +32,7 @@ export default function MyPlantsDetailPage() {
   return (
     <div className="flex flex-col justify-between items-center min-h-svh h-full w-full max-w-[1400px]">
       <div className="w-full h-full">
-        <TopSectionMyPlantDetails plantName={myPlant!.plantName} />
+        <TopSectionMyPlantDetails plantName={myPlant!.plantName} link={routerEnum.MY_PLANTS} />
 
         <ImageMyPlantsDetails plantImage={myPlant!.plantImage} />
 

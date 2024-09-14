@@ -8,6 +8,7 @@ import TopSectionMyPlantDetails from "../components/myPlantDetails/topSectionMyP
 import ImageMyPlantsDetails from "../components/myPlantDetails/imageMyPlantDetails";
 import OverviewMyPlantDetails from "../components/treflePlantDetails/overViewMyPlantDetails";
 import useTreflePlantDetails from "../hooks/useTrelfePlantDetails";
+import { routerEnum } from "../routes/routesEnum";
 
 export default function TreflePlantDetailPage() {
   const { treflePlantId } = useParams();
@@ -32,7 +33,7 @@ export default function TreflePlantDetailPage() {
   return (
     <div className="flex flex-col justify-between items-center min-h-svh h-full w-full max-w-[1400px]">
       <div className="w-full h-full">
-        <TopSectionMyPlantDetails plantName={treflePlantDetails!.data.common_name} />
+        <TopSectionMyPlantDetails plantName={treflePlantDetails!.data.common_name} link={routerEnum.HOME} />
 
         <ImageMyPlantsDetails plantImage={treflePlantDetails!.data.image_url} />
 
