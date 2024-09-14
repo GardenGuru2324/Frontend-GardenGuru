@@ -6,7 +6,7 @@ import { TreflePlantDetails } from "../models/treflePlant/treflePlantDetails";
 
 const useTreflePlantDetails = (treflePlantId: string) => {
   0;
-  const { data, isError, isLoading, error } = useQuery<TreflePlantDetails, AxiosError>(["treflePlantDetials"], () =>
+  const { data, isError, isLoading, error } = useQuery<TreflePlantDetails, AxiosError>(["treflePlantDetails"], () =>
     getTreflePlantDetails(treflePlantId)
   );
 
