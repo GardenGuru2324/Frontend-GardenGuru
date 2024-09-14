@@ -33,7 +33,7 @@ export default function MyPlantsDetailPage() {
       <div className="w-full h-full">
         <TopSectionMyPlantDetails myPlant={myPlant!} />
 
-        <ImageMyPlantsDetails myPlant={myPlant!} />
+        <ImageMyPlantsDetails plantImage={myPlant!.plantImage} />
 
         <OverviewMyPlantDetails myPlant={myPlant!} />
       </div>

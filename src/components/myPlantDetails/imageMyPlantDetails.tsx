@@ -1,10 +1,8 @@
-import { Plant } from "../../models/plant/plant";
-
-interface ImageMyPlantsDetailsProps {
-  myPlant: Plant;
+interface ImagePlantDetailsProps {
+  plantImage: string;
 }
 
-const ImageMyPlantsDetails = ({ myPlant }: ImageMyPlantsDetailsProps) => {
+const ImageMyPlantsDetails = ({ plantImage }: ImagePlantDetailsProps) => {
   const dummyImage = "https://i.ibb.co/sq4Lb8f/dummy-plant.png";
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
@@ -14,8 +12,8 @@ const ImageMyPlantsDetails = ({ myPlant }: ImageMyPlantsDetailsProps) => {
   return (
     <div className="w-full max-h-[350px]">
       <img
-        src={myPlant.plantImage}
-        alt={myPlant.plantName}
+        src={plantImage}
+        alt={plantImage}
         onError={(e) => {
           handleImageError(e);
         }}

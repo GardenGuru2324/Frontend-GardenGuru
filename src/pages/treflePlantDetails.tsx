@@ -5,7 +5,7 @@ import ErrorPage from "../components/errors/errorPage";
 
 import { BottomDetailSection } from "../components/treflePlantDetails/bottomDetailSection";
 import TopSectionMyPlantDetails from "../components/treflePlantDetails/topSectionMyPlantDetails";
-import ImageMyPlantsDetails from "../components/treflePlantDetails/imageMyPlantDetails";
+import ImageMyPlantsDetails from "../components/myPlantDetails/imageMyPlantDetails";
 import OverviewMyPlantDetails from "../components/treflePlantDetails/overViewMyPlantDetails";
 import useTreflePlantDetails from "../hooks/useTrelfePlantDetails";
 
@@ -34,7 +34,7 @@ export default function TreflePlantDetailPage() {
       <div className="w-full h-full">
         <TopSectionMyPlantDetails treflePlant={treflePlantDetails!} />
 
-        <ImageMyPlantsDetails treflePlant={treflePlantDetails!} />
+        <ImageMyPlantsDetails plantImage={treflePlantDetails!.data.image_url} />
 
         <OverviewMyPlantDetails treflePlant={treflePlantDetails!} />
       </div>
