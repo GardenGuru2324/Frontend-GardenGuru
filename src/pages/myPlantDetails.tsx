@@ -31,7 +31,7 @@ export default function MyPlantsDetailPage() {
   return (
     <div className="flex flex-col justify-between items-center min-h-svh h-full w-full max-w-[1400px]">
       <div className="w-full h-full">
-        <TopSectionMyPlantDetails myPlant={myPlant!} />
+        <TopSectionMyPlantDetails plantName={myPlant!.plantName} />
 
         <ImageMyPlantsDetails plantImage={myPlant!.plantImage} />
 

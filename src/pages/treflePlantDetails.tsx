@@ -4,7 +4,7 @@ import Loading from "../components/ui/loading";
 import ErrorPage from "../components/errors/errorPage";
 
 import { BottomDetailSection } from "../components/treflePlantDetails/bottomDetailSection";
-import TopSectionMyPlantDetails from "../components/treflePlantDetails/topSectionMyPlantDetails";
+import TopSectionMyPlantDetails from "../components/myPlantDetails/topSectionMyPlantDetails";
 import ImageMyPlantsDetails from "../components/myPlantDetails/imageMyPlantDetails";
 import OverviewMyPlantDetails from "../components/treflePlantDetails/overViewMyPlantDetails";
 import useTreflePlantDetails from "../hooks/useTrelfePlantDetails";
@@ -32,7 +32,7 @@ export default function TreflePlantDetailPage() {
   return (
     <div className="flex flex-col justify-between items-center min-h-svh h-full w-full max-w-[1400px]">
       <div className="w-full h-full">
-        <TopSectionMyPlantDetails treflePlant={treflePlantDetails!} />
+        <TopSectionMyPlantDetails plantName={treflePlantDetails!.data.common_name} />
 
         <ImageMyPlantsDetails plantImage={treflePlantDetails!.data.image_url} />
 
