@@ -18,7 +18,7 @@ interface OverviewMyPlantDetailsProps {
 
 const OverviewMyPlantDetails = ({ myPlant }: OverviewMyPlantDetailsProps) => {
   const createCelsiusFormat = (maxTemp: number, minTemp: number): string => {
-    return `${minTemp} - ${maxTemp}`;
+    return `${minTemp} °C - ${maxTemp}`;
   };
 
   return (
