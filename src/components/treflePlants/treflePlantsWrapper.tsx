@@ -30,9 +30,9 @@ export default function TreflePlantsWrapper() {
   return (
     <div>
       <div className="flex justify-center items-center flex-wrap max-w-[1400px] w-full h-full">
-        {treflePlants!.map((treflePlant, index) => (
-          <TreflePlantCard treflePlant={treflePlant} index={index} />
-        ))}
+        {treflePlants!.map(
+          (treflePlant, index) => treflePlant.common_name && <TreflePlantCard treflePlant={treflePlant} index={index} />
+        )}
       </div>
       <TreflePagination page={page} setPage={setPage} />
     </div>
