@@ -1,83 +1,59 @@
+import {
+  ArrowUpFromLine,
+  ArrowUpToLine,
+  BetweenVerticalEnd,
+  Thermometer,
+  Tractor,
+  TreeDeciduous,
+  Utensils,
+  UtensilsCrossed,
+  BarChart4,
+} from "lucide-react";
 import { Plant } from "../../models/plant/plant";
+import Detailsquare from "./detailSquare";
 
 interface OverviewMyPlantDetailsProps {
   myPlant: Plant;
 }
 
 const OverviewMyPlantDetails = ({ myPlant }: OverviewMyPlantDetailsProps) => {
+  const createCelsiusFormat = (maxTemp: number, minTemp: number): string => {
+    return `${minTemp} °C - ${maxTemp}`;
+  };
+
   return (
     <div className="w-full">
-      <div className="text-white bg-[#1A4D2E] p-2 ml-4 mt-4 rounded-md w-[100px] h-[30px] flex items-center justify-center font-semibold">
+      <div className="text-white bg-[#1A4D2E] ml-4 mt-4 rounded-md w-[100px] h-[30px] flex items-center justify-center font-semibold">
         Overview
       </div>
-      <div className="m-4 flex flex-col gap-2" id="myPlant-details-section">
-        {myPlant.plantAvgHeight && (
-          <div className="flex justify-between w-full">
-            <p>Average height</p>
-            <p>{myPlant?.plantAvgHeight} cm</p>
-          </div>
-        )}
-        {myPlant.plantMaxHeight && (
-          <div className="flex justify-between w-full">
-            <p>Maximum height</p>
-            <p>{myPlant?.plantMaxHeight} cm</p>
-          </div>
-        )}
-        {myPlant.plantMinTemp && (
-          <div className="flex justify-between w-full">
-            <p>Minimum temperature</p>
-            <p>{myPlant?.plantMinTemp} &#8451;</p>
-          </div>
-        )}
-        {myPlant.plantMaxTemp && (
-          <div className="flex justify-between w-full">
-            <p>Maximum temperature</p>
-            <p>{myPlant?.plantMaxTemp} &#8451;</p>
-          </div>
-        )}
-        {myPlant?.isVegetable ? (
-          <div className="flex justify-between w-full">
-            <p>Edible</p>
-            <p>Yes</p>
-          </div>
+      <div className="flex flex-wrap gap-4 m-4" id="myPlant-details-section">
+        {myPlant.plantAvgHeight && <Detailsquare data={myPlant.plantAvgHeight} icon={ArrowUpFromLine} text="cm" />}
+
+        {myPlant.plantMaxHeight && <Detailsquare data={myPlant.plantMaxHeight} icon={ArrowUpToLine} text="cm" />}
+
+        {myPlant.plantGrowthHabit && <Detailsquare data={myPlant.plantGrowthHabit} icon={TreeDeciduous} text="" />}
+
+        {myPlant.isVegetable ? (
+          <Detailsquare data={null} icon={Utensils} text="Edible" />
         ) : (
-          <div className="flex justify-between w-full">
-            <p>Edible</p>
-            <p>No</p>
-          </div>
+          <Detailsquare data={null} icon={UtensilsCrossed} text="Not edible" />
         )}
-        {myPlant.plantGrowthHabit && (
-          <div className="flex justify-between w-full">
-            <p>Growt habit</p>
-            <p>{myPlant?.plantGrowthHabit}</p>
-          </div>
-        )}
-        {myPlant.plantGrowthRate && (
-          <div className="flex justify-between w-full">
-            <p>Growt rate</p>
-            <p>{myPlant?.plantGrowthRate}</p>
-          </div>
-        )}
-        {myPlant.plantDaysToHarvest > 0 ? (
-          <div className="flex justify-between w-full">
-            <p>Days to harvest</p>
-            <p>{myPlant?.plantDaysToHarvest} days</p>
-          </div>
-        ) : (
-          <div className="flex justify-between w-full">
-            <p>Days to harvest</p>
-            <p>This plant cannot be harvested</p>
-          </div>
-        )}
-        {myPlant.plantRowSpacing && (
-          <div className="flex justify-between w-full">
-            <p>Plant row spacing</p>
-            <p>{myPlant?.plantRowSpacing} cm</p>
-          </div>
+
+        {myPlant.plantGrowthRate && <Detailsquare data={myPlant.plantGrowthRate} icon={BarChart4} text="" />}
+
+        {myPlant.plantRowSpacing && <Detailsquare data={myPlant.plantRowSpacing} icon={BetweenVerticalEnd} text="cm" />}
+
+        {myPlant.plantDaysToHarvest && <Detailsquare data={myPlant.plantDaysToHarvest} icon={Tractor} text="Days" />}
+
+        {myPlant.plantMaxTemp && myPlant.plantMinTemp && (
+          <Detailsquare
+            data={createCelsiusFormat(myPlant.plantMaxTemp, myPlant.plantMinTemp)}
+            icon={Thermometer}
+            text="&deg;C"
+          />
         )}
       </div>
     </div>
   );
 };
-
 export default OverviewMyPlantDetails;
