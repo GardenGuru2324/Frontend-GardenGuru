@@ -29,15 +29,18 @@ export default function ProfilePage() {
 
   return (
     <div>
-      <div className="w-svw max-w-[1400px] h-64 bg-[#E8DFCA] flex justify-center items-center flex-col">
+      <div id="top-section-profile-page" className="w-svw max-w-[1400px] h-64 bg-[#E8DFCA] flex justify-center items-center flex-col">
         <div
           className="mb-4 rounded-full max-w-[150px] max-h-[150px] w-full h-full bg-cover bg-no-repeat bg-center"
+          id="profile-picture"
           style={{ backgroundImage: `url(${profile!.profilePicture})` }}
         ></div>
-        <p className="text-black font-bold">Edit profile image</p>
+        <Button disabled variant="contained" className="font-bold" id="edit-profile-picture-button">
+          Edit profile image
+        </Button>
       </div>
 
-      <div className="px-8 py-4">
+      <div id="info-section-profile-page" className="px-8 py-4">
         <div className="leading-10 border-b-[0.5px] border-[#929292] px-4 py-2">
           <p className="text-black font-bold uppercase">Name</p>
           <p>{profile?.fullName}</p>
@@ -45,10 +48,6 @@ export default function ProfilePage() {
         <div className="leading-10 border-b-[0.5px] border-[#929292] px-4 py-2">
           <p className="text-black font-bold uppercase">Email</p>
           <p>{profile?.email}</p>
-        </div>
-        <div className="leading-10 border-b-[0.5px] border-[#929292] px-4 py-2">
-          <p className="text-black font-bold uppercase">User name</p>
-          <p>@{profile?.userName}</p>
         </div>
         <div className="leading-10 border-b-[0.5px] border-[#929292] px-4 py-2">
           <p className="text-black font-bold uppercase">Active since</p>
@@ -60,7 +59,13 @@ export default function ProfilePage() {
               variant="contained"
               onClick={() => logout()}
               id="logout-button"
-              sx={{ backgroundColor: "#1A4D2E", width: "100%" }}
+              sx={{
+                backgroundColor: "#1A4D2E",
+                width: "100%",
+                "&:hover": {
+                  backgroundColor: "#1A4D2E",
+                },
+              }}
             >
               Logout
             </Button>
