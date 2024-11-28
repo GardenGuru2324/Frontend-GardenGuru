@@ -9,16 +9,21 @@ import { useNavigate } from "react-router-dom";
 
 interface BottomDetailSectionProps {
   plantId: string;
+  setModal: (modal: boolean) => void;
 }
 
-export function BottomDetailSection({ plantId }: BottomDetailSectionProps) {
+export function BottomDetailSection({ plantId, setModal }: BottomDetailSectionProps) {
   const [value, setValue] = useState(0);
   const { userId } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const deleteMyPlant = async () => {
     await deleteMyPlantByPlantId(userId, plantId);
-    navigate("/myPlants");
+    setModal(true);
+    setTimeout(() => {
+      setModal(false);
+      navigate("/myPlants");
+    }, 3000);
   };
 
   return (

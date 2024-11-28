@@ -8,9 +8,13 @@ import TopSectionMyPlantDetails from "../components/myPlantDetails/topSectionMyP
 import ImageMyPlantsDetails from "../components/myPlantDetails/imageMyPlantDetails";
 import OverviewMyPlantDetails from "../components/myPlantDetails/overViewMyPlantDetails";
 import { routerEnum } from "../routes/routesEnum";
+import { useState } from "react";
+import { Alert } from "@mui/material";
+import { Sprout } from "lucide-react";
 
 export default function MyPlantsDetailPage() {
   const { plantId } = useParams();
+  const [modal, setModel] = useState<boolean>(false);
   const { myPlant, isError, isLoading, error } = useMyPlantsDetails(plantId!);
 
   if (isLoading) {
@@ -36,9 +40,17 @@ export default function MyPlantsDetailPage() {
 
         <ImageMyPlantsDetails plantImage={myPlant!.plantImage} />
 
+        <div className="flex justify-center items-center h-full w-full">
+          {modal && (
+            <Alert className="w-[100%] max-w-[1400px] rounded mt-4 ml-4 mr-4 flex items-center" icon={<Sprout color="white" />} sx={{ color: "white" }} variant="filled" severity="error">
+              Plant successfully deleted of your profile!
+            </Alert>
+          )}
+        </div>
+
         <OverviewMyPlantDetails myPlant={myPlant!} />
       </div>
-      <BottomDetailSection plantId={myPlant!.plantId} />
+      <BottomDetailSection plantId={myPlant!.plantId} setModal={setModel} />
     </div>
   );
 }
