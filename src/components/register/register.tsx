@@ -15,7 +15,8 @@ export default function Register() {
 
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [fullName, setFullName] = useState<string>("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | undefined>(undefined);
 
@@ -23,6 +24,8 @@ export default function Register() {
     event.preventDefault();
 
     setLoading(true);
+
+    const fullName: string = firstName + " " + lastName;
 
     const response = await registerUser(email, fullName, password);
 
@@ -47,7 +50,8 @@ export default function Register() {
             <RegisterForm
               handleRegister={handleRegister}
               setEmail={setEmail}
-              setFullName={setFullName}
+              setFirstName={setFirstName}
+              setLastName={setLastName}
               setPassword={setPassword}
               errorMessage={errorMessage!}
               loading={loading}

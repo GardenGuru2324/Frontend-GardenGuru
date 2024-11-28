@@ -9,7 +9,7 @@ interface MyPlantsPaginationProps {
 
 const MyPlantsPagination = ({ page, setPage, nextPage }: MyPlantsPaginationProps) => {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center mb-4">
       {page !== 1 ? (
         <Button
           onClick={() => setPage(page - 1)}

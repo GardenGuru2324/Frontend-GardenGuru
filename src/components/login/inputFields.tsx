@@ -9,7 +9,7 @@ const InputFields = ({ setEmail, setPassword }: InputFieldProps) => {
       <div>
         <input
           placeholder="Email address"
-          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
+          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm shadow-sm"
           required={true}
           type="email"
           name="email"
@@ -20,7 +20,7 @@ const InputFields = ({ setEmail, setPassword }: InputFieldProps) => {
       <div className="mt-4">
         <input
           placeholder="Password"
-          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
+          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm shadow-sm"
           required={true}
           type="password"
           name="password"

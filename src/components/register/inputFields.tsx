@@ -1,16 +1,17 @@
 interface InputFieldProps {
   setEmail: (email: string) => void;
   setPassword: (passwoord: string) => void;
-  setFullName: (email: string) => void;
+  setFirstName: (firstName: string) => void;
+  setLastName: (lastName: string) => void;
 }
 
-const InputFields = ({ setEmail, setPassword, setFullName }: InputFieldProps) => {
+const InputFields = ({ setEmail, setPassword, setFirstName, setLastName }: InputFieldProps) => {
   return (
     <div>
       <div>
         <input
           placeholder="Email address"
-          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
+          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm shadow-sm"
           required={true}
           type="email"
           name="email"
@@ -21,20 +22,32 @@ const InputFields = ({ setEmail, setPassword, setFullName }: InputFieldProps) =>
 
       <div className="mt-4">
         <input
-          placeholder="Full Name"
-          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
+          placeholder="First Name"
+          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm shadow-sm"
           required={true}
           type="text"
           name="text"
           id="fullName-input"
-          onChange={(e) => setFullName(e.target.value)}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+      </div>
+
+      <div className="mt-4">
+        <input
+          placeholder="Last Name"
+          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm shadow-sm"
+          required={true}
+          type="text"
+          name="text"
+          id="fullName-input"
+          onChange={(e) => setLastName(e.target.value)}
         />
       </div>
 
       <div className="mt-4">
         <input
           placeholder="Password"
-          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
+          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm shadow-sm"
           required={true}
           type="password"
           name="password"
