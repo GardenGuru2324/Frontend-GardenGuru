@@ -10,9 +10,10 @@ import { addPlantToMyPlants } from "../../services/plants/addPlant";
 
 interface BottomDetailSectionProps {
   treflePlant: TreflePlantDetails;
+  setModal: (modal: boolean) => void;
 }
 
-export function BottomDetailSection({ treflePlant }: BottomDetailSectionProps) {
+export function BottomDetailSection({ treflePlant, setModal }: BottomDetailSectionProps) {
   const [value, setValue] = useState(0);
   const { userId } = useContext(AuthContext);
 
@@ -32,8 +33,12 @@ export function BottomDetailSection({ treflePlant }: BottomDetailSectionProps) {
       plantMaxTemp: treflePlant.data.main_species.growth.minimum_temperature.deg_c,
       userId: userId,
     };
-
     await addPlantToMyPlants(newPlant);
+    setModal(true);
+
+    setTimeout(() => {
+      setModal(false);
+    }, 3000);
   };
 
   return (
