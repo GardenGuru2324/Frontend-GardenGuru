@@ -1,11 +1,30 @@
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { Sprout } from "lucide-react";
+import { deleteMyPlantByPlantId } from "../../services/plants/deleteMyPlant";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-export function BottomDetailSection() {
+interface BottomDetailSectionProps {
+  plantId: string;
+  setModal: (modal: boolean) => void;
+}
+
+export function BottomDetailSection({ plantId, setModal }: BottomDetailSectionProps) {
   const [value, setValue] = useState(0);
+  const { userId } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const deleteMyPlant = async () => {
+    await deleteMyPlantByPlantId(userId, plantId);
+    setModal(true);
+    setTimeout(() => {
+      setModal(false);
+      navigate("/myPlants");
+    }, 3000);
+  };
 
   return (
     <Box sx={{ maxWidth: "1400px", width: "100%" }}>
@@ -34,6 +53,7 @@ export function BottomDetailSection() {
           }}
           startIcon={<Sprout />}
           id="delete-myPlant-button"
+          onClick={deleteMyPlant}
         >
           Delete plant
         </Button>
