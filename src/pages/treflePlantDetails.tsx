@@ -39,7 +39,7 @@ export default function TreflePlantDetailPage() {
 
         <OverviewMyPlantDetails treflePlant={treflePlantDetails!} />
       </div>
-      <BottomDetailSection />
+      <BottomDetailSection treflePlant={treflePlantDetails!} />
     </div>
   );
 }

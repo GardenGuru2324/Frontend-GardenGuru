@@ -1,11 +1,40 @@
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "@mui/material";
 import { Sprout } from "lucide-react";
+import { TreflePlantDetails } from "../../models/treflePlant/treflePlantDetails";
+import { NewPlant } from "../../models/plant/newPlant";
+import { AuthContext } from "../../contexts/AuthContext";
+import { addPlantToMyPlants } from "../../services/plants/addPlant";
 
-export function BottomDetailSection() {
+interface BottomDetailSectionProps {
+  treflePlant: TreflePlantDetails;
+}
+
+export function BottomDetailSection({ treflePlant }: BottomDetailSectionProps) {
   const [value, setValue] = useState(0);
+  const { userId } = useContext(AuthContext);
+
+  const addTreflePlantToMyPlants = async () => {
+    let newPlant: NewPlant = {
+      plantName: treflePlant.data.common_name,
+      locationId: "1234", // Fix
+      plantImage: treflePlant.data.image_url,
+      isVegetable: treflePlant.data.vegetable,
+      plantGrowthHabit: treflePlant.data.main_species.specifications.growth_habit,
+      plantAvgHeight: treflePlant.data.main_species.specifications.average_height.cm,
+      plantMaxHeight: treflePlant.data.main_species.specifications.maximum_height.cm,
+      plantGrowthRate: treflePlant.data.main_species.specifications.growth_rate,
+      plantDaysToHarvest: treflePlant.data.main_species.growth.days_to_harvest,
+      plantRowSpacing: treflePlant.data.main_species.growth.row_spacing.cm,
+      plantMinTemp: treflePlant.data.main_species.growth.maximum_temperature.deg_c,
+      plantMaxTemp: treflePlant.data.main_species.growth.minimum_temperature.deg_c,
+      userId: userId,
+    };
+
+    await addPlantToMyPlants(newPlant);
+  };
 
   return (
     <Box sx={{ maxWidth: "1400px", width: "100%" }}>
@@ -34,6 +63,7 @@ export function BottomDetailSection() {
           }}
           startIcon={<Sprout />}
           id="add-treflePlant-button"
+          onClick={addTreflePlantToMyPlants}
         >
           Add plant to my plants
         </Button>
