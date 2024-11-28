@@ -42,7 +42,7 @@ export default function TreflePlantDetailPage() {
         <ImageMyPlantsDetails plantImage={treflePlantDetails!.data.image_url} />
         <div className="flex justify-center items-center h-full w-full">
           {modal && (
-            <Alert className="w-[100%] max-w-[1400px] rounded" icon={<Sprout />} severity="success">
+            <Alert className="w-[100%] max-w-[1400px] rounded mt-4 ml-4 mr-4" icon={<Sprout color="white" />} sx={{ backgroundColor: "#1A4D2E", color: "white" }}>
               Plant successfully added to your profile!
             </Alert>
           )}
