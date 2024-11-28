@@ -1,10 +1,11 @@
 interface InputFieldProps {
   setEmail: (email: string) => void;
   setPassword: (passwoord: string) => void;
-  setFullName: (email: string) => void;
+  setFirstName: (firstName: string) => void;
+  setLastName: (lastName: string) => void;
 }
 
-const InputFields = ({ setEmail, setPassword, setFullName }: InputFieldProps) => {
+const InputFields = ({ setEmail, setPassword, setFirstName, setLastName }: InputFieldProps) => {
   return (
     <div>
       <div>
@@ -21,13 +22,25 @@ const InputFields = ({ setEmail, setPassword, setFullName }: InputFieldProps) =>
 
       <div className="mt-4">
         <input
-          placeholder="Full Name"
+          placeholder="First Name"
           className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
           required={true}
           type="text"
           name="text"
           id="fullName-input"
-          onChange={(e) => setFullName(e.target.value)}
+          onChange={(e) => setFirstName(e.target.value)}
+        />
+      </div>
+
+      <div className="mt-4">
+        <input
+          placeholder="Last Name"
+          className="appearance-none relative block w-full p-3 border bg-white rounded-md sm:text-sm"
+          required={true}
+          type="text"
+          name="text"
+          id="fullName-input"
+          onChange={(e) => setLastName(e.target.value)}
         />
       </div>
 
