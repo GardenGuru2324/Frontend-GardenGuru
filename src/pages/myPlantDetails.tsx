@@ -38,7 +38,7 @@ export default function MyPlantsDetailPage() {
 
         <OverviewMyPlantDetails myPlant={myPlant!} />
       </div>
-      <BottomDetailSection />
+      <BottomDetailSection plantId={myPlant!.plantId} />
     </div>
   );
 }
