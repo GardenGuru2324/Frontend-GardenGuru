@@ -37,16 +37,16 @@ export default function TreflePlantDetailPage() {
   return (
     <div className="flex flex-col justify-between items-center min-h-svh h-full w-full max-w-[1400px]">
       <div className="w-full h-full">
+        <TopSectionMyPlantDetails plantName={treflePlantDetails!.data.common_name} link={routerEnum.HOME} />
+
+        <ImageMyPlantsDetails plantImage={treflePlantDetails!.data.image_url} />
         <div className="flex justify-center items-center h-full w-full">
           {modal && (
-            <Alert className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-200 p-4 rounded shadow-lg w-[90%] max-w-[1200px]" icon={<Sprout />} severity="success">
+            <Alert className="w-[100%] max-w-[1400px] rounded" icon={<Sprout />} severity="success">
               Plant successfully added to your profile!
             </Alert>
           )}
         </div>
-        <TopSectionMyPlantDetails plantName={treflePlantDetails!.data.common_name} link={routerEnum.HOME} />
-
-        <ImageMyPlantsDetails plantImage={treflePlantDetails!.data.image_url} />
 
         <OverviewMyPlantDetails treflePlant={treflePlantDetails!} />
       </div>

@@ -38,7 +38,7 @@ export function BottomDetailSection({ treflePlant, setModal }: BottomDetailSecti
 
     setTimeout(() => {
       setModal(false);
-    }, 3000);
+    }, 5000);
   };
 
   return (
